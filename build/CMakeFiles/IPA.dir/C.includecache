@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/sniffex.h
+pcap.h
+-
+
+/Users/xkaneiki/Desktop/IPA/src/main.c
+stdio.h
+-
+IPAConfig.h
+/Users/xkaneiki/Desktop/IPA/src/IPAConfig.h
+sniffex.h
+/Users/xkaneiki/Desktop/IPA/src/sniffex.h
+
+IPAConfig.h
+

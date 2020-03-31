@@ -1,0 +1,4 @@
+/Users/xkaneiki/Desktop/IPA/build/CMakeFiles/rebuild_cache.dir
+/Users/xkaneiki/Desktop/IPA/build/CMakeFiles/edit_cache.dir
+/Users/xkaneiki/Desktop/IPA/build/CMakeFiles/IPA.dir
+/Users/xkaneiki/Desktop/IPA/build/CMakeFiles/sniffex.dir

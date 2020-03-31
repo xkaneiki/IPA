@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/sniffex.h
+pcap.h
+-
+
+/Users/xkaneiki/Desktop/IPA/src/sniffex.c
+stdio.h
+-
+stdlib.h
+-
+sniffex.h
+/Users/xkaneiki/Desktop/IPA/src/sniffex.h
+

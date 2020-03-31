@@ -1,0 +1,2 @@
+#define IPA_VERSION_MAJOR 0
+#define IPA_VERSION_MINOR 0
