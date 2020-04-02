@@ -12,7 +12,10 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-
+#define APP_NAME "sniffex"
+#define APP_DESC "Sniffer example using libpcap"
+#define APP_COPYRIGHT "Copyright (c) 2005 The Tcpdump Group"
+#define APP_DISCLAIMER "THERE IS ABSOLUTELY NO WARRANTY FOR THIS PROGRAM."
 
 /* Ethernet header */
 #define SNAP_LEN 1518/* default snap length (maximum bytes per packet to capture) */
@@ -75,7 +78,7 @@ struct sniff_tcp
 };
 
 /*functions*/
-int getDev(char *NAME,char *ERR);
+int getDev(char **NAME,char **ERR);
 
 void got_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);
 
@@ -87,6 +90,7 @@ void print_app_banner(void);
 
 void print_app_usage(void);
 
+int capture();
 
 #endif // Sniffex
 
