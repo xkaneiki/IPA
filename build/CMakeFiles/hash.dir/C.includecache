@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/xkaneiki/Desktop/IPA/src/hello.c
+../include/hash.h
+
+/Users/xkaneiki/Desktop/IPA/src/hash.c
 stdio.h
 -
+string.h
+-
+stdlib.h
+-
+hash.h
+/Users/xkaneiki/Desktop/IPA/src/hash.h
 

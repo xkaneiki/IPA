@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+../include/hash.h
+
 ../include/sniffex.h
 pcap.h
 -
@@ -33,6 +35,14 @@ stdio.h
 -
 stdlib.h
 -
+time.h
+-
+signal.h
+-
+unistd.h
+-
 sniffex.h
 /Users/xkaneiki/Desktop/IPA/src/sniffex.h
+hash.h
+/Users/xkaneiki/Desktop/IPA/src/hash.h
 

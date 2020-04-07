@@ -1,13 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <signal.h>
+#include <unistd.h>
 #include "sniffex.h"
+#include "hash.h"
 
 /*
 *get device name
 */
-int getDev(char **NAME,char **ERR)
+int get_dev(char **NAME, char **ERR)
 {
-    *ERR=(char *)malloc(PCAP_ERRBUF_SIZE*sizeof(char));
+    *ERR = (char *)malloc(PCAP_ERRBUF_SIZE * sizeof(char));
     *NAME = pcap_lookupdev(ERR);
     if (*NAME == NULL)
     {
@@ -97,11 +101,11 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *pa
 	 * Print payload data; it might be binary, so don't just
 	 * treat it as a string.
 	 */
-    if (size_payload > 0)
-    {
-        printf("   Payload (%d bytes):\n", size_payload);
-        print_payload(payload, size_payload);
-    }
+    // if (size_payload > 0)
+    // {
+    //     printf("   Payload (%d bytes):\n", size_payload);
+    //     print_payload(payload, size_payload);
+    // }
 
     return;
 }
@@ -238,20 +242,19 @@ void print_payload(const u_char *payload, int len)
     return;
 }
 
-
 int capture()
 {
     char *dev = NULL;              /* capture device name */
     char errbuf[PCAP_ERRBUF_SIZE]; /* error buffer */
-    pcap_t *handle;                /* packet capture handle */
+    static pcap_t *handle;         /* packet capture handle */
 
     char filter_exp[] = "ip"; /* filter expression [3] */
     struct bpf_program fp;    /* compiled filter program (expression) */
     bpf_u_int32 mask;         /* subnet mask */
     bpf_u_int32 net;          /* ip */
-    int num_packets = 10;     /* number of packets to capture */
+    int num_packets = 100;    /* number of packets to capture */
 
-    print_app_banner();
+    // print_app_banner();
 
     // /* check for capture device name on command-line */
     // if (argc == 2)
@@ -275,8 +278,7 @@ int capture()
     //         exit(EXIT_FAILURE);
     //     }
     // }
-    getDev(&dev,&errbuf);
-
+    get_dev(&dev, &errbuf);
     /* get network number and mask associated with capture device */
     if (pcap_lookupnet(dev, &net, &mask, errbuf) == -1)
     {
@@ -287,9 +289,9 @@ int capture()
     }
 
     /* print capture info */
-    printf("Device: %s\n", dev);
-    printf("Number of packets: %d\n", num_packets);
-    printf("Filter expression: %s\n", filter_exp);
+    // printf("Device: %s\n", dev);
+    // printf("Number of packets: %d\n", num_packets);
+    // printf("Filter expression: %s\n", filter_exp);
 
     /* open capture device */
     handle = pcap_open_live(dev, SNAP_LEN, 1, 1000, errbuf);
@@ -323,11 +325,21 @@ int capture()
     }
 
     /* now we can set our callback function */
+    // pcap_loop(handle, num_packets, got_packet, NULL);
+    // pcap_dispatch(handle, num_packets, got_packet, NULL);
+
+    alarm(1);
+    signal(SIGALRM, sig_alarm);
     pcap_loop(handle, num_packets, got_packet, NULL);
 
     /* cleanup */
     pcap_freecode(&fp);
     pcap_close(handle);
-
     printf("\nCapture complete.\n");
+}
+
+void sig_alarm()
+{
+    printf("shutdown!\n");
+    // pcap_breakloop(handle);
 }

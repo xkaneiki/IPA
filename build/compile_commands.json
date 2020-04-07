@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/Users/xkaneiki/Desktop/IPA/build",
+  "command": "/usr/bin/clang  -I/Users/xkaneiki/Desktop/IPA/build -I/Users/xkaneiki/Desktop/IPA/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/IPA.dir/src/main.c.o   -c /Users/xkaneiki/Desktop/IPA/src/main.c",
+  "file": "/Users/xkaneiki/Desktop/IPA/src/main.c"
+},
+{
+  "directory": "/Users/xkaneiki/Desktop/IPA/build",
+  "command": "/usr/bin/clang  -I/Users/xkaneiki/Desktop/IPA/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/sniffex.dir/src/sniffex.c.o   -c /Users/xkaneiki/Desktop/IPA/src/sniffex.c",
+  "file": "/Users/xkaneiki/Desktop/IPA/src/sniffex.c"
+},
+{
+  "directory": "/Users/xkaneiki/Desktop/IPA/build",
+  "command": "/usr/bin/clang  -I/Users/xkaneiki/Desktop/IPA/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/myrbtree.dir/src/myrbtree.c.o   -c /Users/xkaneiki/Desktop/IPA/src/myrbtree.c",
+  "file": "/Users/xkaneiki/Desktop/IPA/src/myrbtree.c"
+},
+{
+  "directory": "/Users/xkaneiki/Desktop/IPA/build",
+  "command": "/usr/bin/clang  -I/Users/xkaneiki/Desktop/IPA/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/correlation.dir/src/correlation.c.o   -c /Users/xkaneiki/Desktop/IPA/src/correlation.c",
+  "file": "/Users/xkaneiki/Desktop/IPA/src/correlation.c"
+},
+{
+  "directory": "/Users/xkaneiki/Desktop/IPA/build",
+  "command": "/usr/bin/clang  -I/Users/xkaneiki/Desktop/IPA/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/hash.dir/src/hash.c.o   -c /Users/xkaneiki/Desktop/IPA/src/hash.c",
+  "file": "/Users/xkaneiki/Desktop/IPA/src/hash.c"
+}
+]

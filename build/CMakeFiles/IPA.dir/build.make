@@ -60,15 +60,15 @@ include CMakeFiles/IPA.dir/flags.make
 CMakeFiles/IPA.dir/src/main.c.o: CMakeFiles/IPA.dir/flags.make
 CMakeFiles/IPA.dir/src/main.c.o: ../src/main.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xkaneiki/Desktop/IPA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/IPA.dir/src/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/IPA.dir/src/main.c.o   -c /Users/xkaneiki/Desktop/IPA/src/main.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/IPA.dir/src/main.c.o   -c /Users/xkaneiki/Desktop/IPA/src/main.c
 
 CMakeFiles/IPA.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/IPA.dir/src/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/xkaneiki/Desktop/IPA/src/main.c > CMakeFiles/IPA.dir/src/main.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/xkaneiki/Desktop/IPA/src/main.c > CMakeFiles/IPA.dir/src/main.c.i
 
 CMakeFiles/IPA.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/IPA.dir/src/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/xkaneiki/Desktop/IPA/src/main.c -o CMakeFiles/IPA.dir/src/main.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/xkaneiki/Desktop/IPA/src/main.c -o CMakeFiles/IPA.dir/src/main.c.s
 
 # Object files for target IPA
 IPA_OBJECTS = \
@@ -80,6 +80,9 @@ IPA_EXTERNAL_OBJECTS =
 IPA: CMakeFiles/IPA.dir/src/main.c.o
 IPA: CMakeFiles/IPA.dir/build.make
 IPA: libsniffex.a
+IPA: libhash.a
+IPA: libcorrelation.a
+IPA: libmyrbtree.a
 IPA: CMakeFiles/IPA.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/xkaneiki/Desktop/IPA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable IPA"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IPA.dir/link.txt --verbose=$(VERBOSE)

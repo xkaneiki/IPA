@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcorrelation.a  CMakeFiles/correlation.dir/src/correlation.c.o
+/usr/bin/ranlib libcorrelation.a

@@ -1,0 +1,95 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "IPA",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "IPA::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IPA-Debug-3a99cd583c27039ff5f3.json",
+					"name" : "IPA",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "correlation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-correlation-Debug-b925e4050058f00327dc.json",
+					"name" : "correlation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hash::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hash-Debug-dba9ab6215f7bf9746a0.json",
+					"name" : "hash",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "myrbtree::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-myrbtree-Debug-b924de87a7944a0af5c7.json",
+					"name" : "myrbtree",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sniffex::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sniffex-Debug-af4cc7f788d98d1395bd.json",
+					"name" : "sniffex",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/xkaneiki/Desktop/IPA/build",
+		"source" : "/Users/xkaneiki/Desktop/IPA"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

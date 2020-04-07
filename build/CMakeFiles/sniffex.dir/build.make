@@ -60,15 +60,15 @@ include CMakeFiles/sniffex.dir/flags.make
 CMakeFiles/sniffex.dir/src/sniffex.c.o: CMakeFiles/sniffex.dir/flags.make
 CMakeFiles/sniffex.dir/src/sniffex.c.o: ../src/sniffex.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/xkaneiki/Desktop/IPA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sniffex.dir/src/sniffex.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sniffex.dir/src/sniffex.c.o   -c /Users/xkaneiki/Desktop/IPA/src/sniffex.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sniffex.dir/src/sniffex.c.o   -c /Users/xkaneiki/Desktop/IPA/src/sniffex.c
 
 CMakeFiles/sniffex.dir/src/sniffex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sniffex.dir/src/sniffex.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/xkaneiki/Desktop/IPA/src/sniffex.c > CMakeFiles/sniffex.dir/src/sniffex.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/xkaneiki/Desktop/IPA/src/sniffex.c > CMakeFiles/sniffex.dir/src/sniffex.c.i
 
 CMakeFiles/sniffex.dir/src/sniffex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sniffex.dir/src/sniffex.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/xkaneiki/Desktop/IPA/src/sniffex.c -o CMakeFiles/sniffex.dir/src/sniffex.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/xkaneiki/Desktop/IPA/src/sniffex.c -o CMakeFiles/sniffex.dir/src/sniffex.c.s
 
 # Object files for target sniffex
 sniffex_OBJECTS = \
