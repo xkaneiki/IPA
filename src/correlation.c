@@ -1,24 +1,32 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
 #include "correlation.h"
-
 
 int init_cor(char *dev)
 {
     //init some variables
-    h = (struct hash *)malloc(sizeof(struct hash));
-    init_hash(&h);
-    print_hash(h);
+    // h = (struct hash *)malloc(sizeof(struct hash));
+    // init_hash(&h);
+    // print_hash(h);
+    T = NULL;         //to store ip address
+    w = 3;            //the window size
+    interval_num = 0; //the num of interval
+    ip_num = 0;
+    /*set space to save the data*/
+    X = (int **)malloc(max_ip * sizeof(int *));
+    for (int i = 0; i < max_ip; i++)
+    {
+        X[i] = (int *)malloc(max_time * sizeof(int));
+        // clear
+        memset(X[i], 0, sizeof X[i]);
+    }
 
     char *errbuf = (char *)malloc(sizeof(char) * PCAP_ERRBUF_SIZE);
 
-    filter_exp="ip";
+    filter_exp = "ip";
 
     if (dev == NULL)
     {
-        if (get_dev(&dev, &errbuf) == -1)
+        dev = pcap_lookupdev(errbuf);
+        if (dev == NULL)
         {
             printf("device error: %s\n", errbuf);
             return -1;
@@ -81,7 +89,7 @@ void got_packet_cor(u_char *args, const struct pcap_pkthdr *header, const u_char
 
     /* define/compute ip header offset */
     ip = (struct sniff_ip *)(packet + SIZE_ETHERNET);
-    size_ip = IP_HL(ip) * 4;/*the length of the header of the ip packet*/
+    size_ip = IP_HL(ip) * 4; /*the length of the header of the ip packet*/
     if (size_ip < 20)
     {
         printf("   * Invalid IP header length: %u bytes\n", size_ip);
@@ -90,23 +98,38 @@ void got_packet_cor(u_char *args, const struct pcap_pkthdr *header, const u_char
 
     /* print source and destination IP addresses */
     printf("       From: %s\n", inet_ntoa(ip->ip_src));
-    printf("         To: %s\n", inet_ntoa(ip->ip_dst));
+    // printf("         To: %s\n", inet_ntoa(ip->ip_dst));
     /* print the generate hash code*/
     // print_hash(h);
-    printf("       The Hash code is: %d\n",generate_hash(h,ip->ip_src.s_addr));
-    
+    // printf("       The Hash code is: %d\n", generate_hash(h, ip->ip_src.s_addr));
+
+    /*record the ip address*/
+    struct myrb_node *p;
+    p = myrb_insert(&T, ip->ip_src.s_addr);
+    if (p->sval == -1)
+    {
+        p->sval = ip_num++;
+    }
+    X[interval_num][p->sval]++;
 }
 
 void sigalarm_cor()
 {
-    // static int intervel = 0;
+    //finish the loop
     pcap_breakloop(handle);
-    // printf("intervel %d:\n", ++intervel);
+
+    // get the cov of this window
+    printf("interal %d finish!\n", interval_num);
+    printf("The COV is : %lf\n\n", get_cov());
+
+    // move window
+    interval_num = (interval_num + 1) % max_time;
     return;
 }
 
 void start_capture_cor()
 {
+    // clear
     alarm(1);
     signal(SIGALRM, sigalarm_cor);
     pcap_loop(handle, -1, got_packet_cor, NULL);
@@ -119,15 +142,66 @@ void finish_capture_cor()
     printf("capture finished!\n");
 }
 
+double get_cov()
+{
+    //caculte the sum of each windows
+    double sum0 = 0, sum1 = 0;
+    for (int ip = 0; ip < ip_num; ip++)
+    {
+        for (int j = 0; j < w; j++)
+        {
+            sum0 += X[ip][(interval_num - j + max_time) % max_time];
+            sum1 += X[ip][(interval_num - (j + 1) + max_time) % max_time];
+        }
+    }
+    //caculate the Expection of each window
+    double E0 = 0, E1 = 0;
+    for (int ip = 0; ip < ip_num; ip++)
+    {
+        double t0 = 0, t1 = 0;
+        for (int j = 0; j < w; j++)
+        {
+            t0 += X[ip][(interval_num - j + max_time) % max_time];
+            t1 += X[ip][(interval_num - (j + 1) + max_time) % max_time];
+        }
+        E0 += t0 * (t0 / sum0);
+        E1 += t1 * (t1 / sum1);
+    }
+    // caculate the var of each window and the cov of two adjacent windows
+    double COV = 0, D0 = 0, D1 = 0;
+    for (int ip = 0; ip < ip_num; ip++)
+    {
+        double t0 = 0, t1 = 0;
+        for (int j = 0; j < w; j++)
+        {
+            t0 += X[ip][(interval_num - j + max_time) % max_time];
+            t1 += X[ip][(interval_num - (j + 1) + max_time) % max_time];
+        }
+        COV += (t0 - E0) * (t1 - E1);
+        D0 += (t0 - E0) * (t0 - E0);
+        D1 += (t1 - E1) * (t1 - E1);
+    }
+
+    // caculate the pxy and return
+    return COV / (sqrt(D0+0.00001) * sqrt(D1+0.00001));
+}
+
 void correlation()
 {
-    int w;//the window size
+    // inverval is 1s
 
     init_cor(NULL);
-    int t = 20;
+
+    int t = 50;
     while (t--)
     {
         start_capture_cor();
     }
+
     finish_capture_cor();
+
+    // print some information
+    printf("max num of ip is: %d\n", max_ip);
+    printf("the num of ip is: %d\n", ip_num);
+    printf("max num of interval time is: %d\n", max_time);
 }
