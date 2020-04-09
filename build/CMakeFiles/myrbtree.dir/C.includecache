@@ -7,6 +7,14 @@
 #IncludeRegexTransform: 
 
 ../include/myrbtree.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
 
 /Users/xkaneiki/Desktop/IPA/src/myrbtree.c
 myrbtree.h
