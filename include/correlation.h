@@ -29,7 +29,8 @@ static const int max_time = 100000; // max num of interval
 static int ip_num;                  //the num of ip
 static int interval_num;            //the num of interval
 static int w;                       //the window size
-
+static FILE *outfile;               //the file to store the pxy
+static int count=0;
 /*functions*/
 int init_cor(char *dev);
 
@@ -40,6 +41,8 @@ void start_capture_cor();
 void finish_capture_cor();
 
 double get_cov();
+
+double get_entrophy();
 
 void correlation();
 
