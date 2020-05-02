@@ -16,6 +16,11 @@
 },
 {
   "directory": "/Users/xkaneiki/Desktop/IPA/build",
+  "command": "/usr/bin/clang  -I/Users/xkaneiki/Desktop/IPA/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/entrophy.dir/src/entrophy.c.o   -c /Users/xkaneiki/Desktop/IPA/src/entrophy.c",
+  "file": "/Users/xkaneiki/Desktop/IPA/src/entrophy.c"
+},
+{
+  "directory": "/Users/xkaneiki/Desktop/IPA/build",
   "command": "/usr/bin/clang  -I/Users/xkaneiki/Desktop/IPA/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk   -o CMakeFiles/correlation.dir/src/correlation.c.o   -c /Users/xkaneiki/Desktop/IPA/src/correlation.c",
   "file": "/Users/xkaneiki/Desktop/IPA/src/correlation.c"
 },

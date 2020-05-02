@@ -26,19 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 38,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 45,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 40,
+				"line" : 47,
 				"parent" : 0
 			}
 		]
@@ -82,6 +82,10 @@
 		},
 		{
 			"backtrace" : 2,
+			"id" : "entrophy::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "correlation::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -109,6 +113,11 @@
 			},
 			{
 				"backtrace" : 2,
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
 				"fragment" : "libsniffex.a",
 				"role" : "libraries"
 			},
@@ -125,6 +134,11 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "libmyrbtree.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libentrophy.a",
 				"role" : "libraries"
 			}
 		],

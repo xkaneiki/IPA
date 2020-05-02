@@ -1,0 +1,2 @@
+/usr/bin/ar qc libentrophy.a  CMakeFiles/entrophy.dir/src/entrophy.c.o
+/usr/bin/ranlib libentrophy.a

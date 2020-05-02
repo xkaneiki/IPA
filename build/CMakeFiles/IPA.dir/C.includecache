@@ -26,6 +26,22 @@ hash.h
 myrbtree.h
 ../include/myrbtree.h
 
+../include/entrophy.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+pcap.h
+-
+signal.h
+-
+math.h
+-
+sniffex.h
+../include/sniffex.h
+
 ../include/hash.h
 
 ../include/myrbtree.h
@@ -71,6 +87,8 @@ sniffex.h
 /Users/xkaneiki/Desktop/IPA/src/sniffex.h
 correlation.h
 /Users/xkaneiki/Desktop/IPA/src/correlation.h
+entrophy.h
+/Users/xkaneiki/Desktop/IPA/src/entrophy.h
 
 IPAConfig.h
 

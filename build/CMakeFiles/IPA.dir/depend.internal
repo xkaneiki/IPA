@@ -3,6 +3,7 @@
 
 CMakeFiles/IPA.dir/src/main.c.o
  ../include/correlation.h
+ ../include/entrophy.h
  ../include/hash.h
  ../include/myrbtree.h
  ../include/sniffex.h

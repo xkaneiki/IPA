@@ -207,7 +207,7 @@ double get_cov()
     printf("D0:%lf\n", D0);
     printf("D1:%lf\n", D1);
     printf("COV:%lf\n", COV);
-
+    
     // caculate the pxy and return
     double pxy = COV / (sqrt(D0) * sqrt(D1));
     printf("pxy:%lf\n", pxy);
@@ -241,7 +241,7 @@ double get_entrophy()
 void correlation()
 {
     // inverval is 1s
-
+    
     init_cor(NULL);
 
     int t = 40;

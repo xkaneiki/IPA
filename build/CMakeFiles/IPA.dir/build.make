@@ -83,6 +83,7 @@ IPA: libsniffex.a
 IPA: libhash.a
 IPA: libcorrelation.a
 IPA: libmyrbtree.a
+IPA: libentrophy.a
 IPA: CMakeFiles/IPA.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/xkaneiki/Desktop/IPA/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable IPA"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IPA.dir/link.txt --verbose=$(VERBOSE)

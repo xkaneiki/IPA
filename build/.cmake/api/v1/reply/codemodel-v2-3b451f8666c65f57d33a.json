@@ -18,7 +18,8 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5
 					]
 				}
 			],
@@ -37,7 +38,8 @@
 						1,
 						2,
 						3,
-						4
+						4,
+						5
 					]
 				}
 			],
@@ -46,7 +48,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "IPA::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-IPA-Debug-3a99cd583c27039ff5f3.json",
+					"jsonFile" : "target-IPA-Debug-bd532b52e0ffb94f0717.json",
 					"name" : "IPA",
 					"projectIndex" : 0
 				},
@@ -55,6 +57,13 @@
 					"id" : "correlation::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-correlation-Debug-b925e4050058f00327dc.json",
 					"name" : "correlation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "entrophy::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-entrophy-Debug-0538925c649b20e45c26.json",
+					"name" : "entrophy",
 					"projectIndex" : 0
 				},
 				{

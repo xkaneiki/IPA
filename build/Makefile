@@ -150,6 +150,19 @@ myrbtree/fast:
 .PHONY : myrbtree/fast
 
 #=============================================================================
+# Target rules for targets named entrophy
+
+# Build rule for target.
+entrophy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 entrophy
+.PHONY : entrophy
+
+# fast build rule for target.
+entrophy/fast:
+	$(MAKE) -f CMakeFiles/entrophy.dir/build.make CMakeFiles/entrophy.dir/build
+.PHONY : entrophy/fast
+
+#=============================================================================
 # Target rules for targets named correlation
 
 # Build rule for target.
@@ -201,6 +214,33 @@ src/correlation.s: src/correlation.c.s
 src/correlation.c.s:
 	$(MAKE) -f CMakeFiles/correlation.dir/build.make CMakeFiles/correlation.dir/src/correlation.c.s
 .PHONY : src/correlation.c.s
+
+src/entrophy.o: src/entrophy.c.o
+
+.PHONY : src/entrophy.o
+
+# target to build an object file
+src/entrophy.c.o:
+	$(MAKE) -f CMakeFiles/entrophy.dir/build.make CMakeFiles/entrophy.dir/src/entrophy.c.o
+.PHONY : src/entrophy.c.o
+
+src/entrophy.i: src/entrophy.c.i
+
+.PHONY : src/entrophy.i
+
+# target to preprocess a source file
+src/entrophy.c.i:
+	$(MAKE) -f CMakeFiles/entrophy.dir/build.make CMakeFiles/entrophy.dir/src/entrophy.c.i
+.PHONY : src/entrophy.c.i
+
+src/entrophy.s: src/entrophy.c.s
+
+.PHONY : src/entrophy.s
+
+# target to generate assembly for a file
+src/entrophy.c.s:
+	$(MAKE) -f CMakeFiles/entrophy.dir/build.make CMakeFiles/entrophy.dir/src/entrophy.c.s
+.PHONY : src/entrophy.c.s
 
 src/hash.o: src/hash.c.o
 
@@ -321,11 +361,15 @@ help:
 	@echo "... IPA"
 	@echo "... sniffex"
 	@echo "... myrbtree"
+	@echo "... entrophy"
 	@echo "... correlation"
 	@echo "... hash"
 	@echo "... src/correlation.o"
 	@echo "... src/correlation.i"
 	@echo "... src/correlation.s"
+	@echo "... src/entrophy.o"
+	@echo "... src/entrophy.i"
+	@echo "... src/entrophy.s"
 	@echo "... src/hash.o"
 	@echo "... src/hash.i"
 	@echo "... src/hash.s"

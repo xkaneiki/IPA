@@ -34,6 +34,13 @@ target_include_directories(myrbtree
 )
 list(APPEND LIBS myrbtree)
 
+# add the library entrophy
+add_library(entrophy src/entrophy.c)
+target_include_directories(entrophy 
+    PUBLIC ${PROJECT_SOURCE_DIR}/include
+)
+list(APPEND LIBS entrophy)
+
 # set executable
 add_executable(IPA src/main.c)
 
@@ -44,5 +51,6 @@ target_include_directories(IPA
 
 target_link_libraries(IPA
     PUBLIC pcap
+    PUBLIC m
     PRIVATE ${LIBS}
 )
